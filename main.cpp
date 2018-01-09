@@ -5,7 +5,7 @@
 
 class worker{
 public:
-    void operator()(int);
+    void operator()();
 };
 
 class worker_a : public worker{
@@ -14,8 +14,8 @@ public:
 
     };
     ~worker_a()=default;
-    void operator()(int j)const{
-        std::cout << "worker_a\n";
+    void operator()()const{
+        std::cout << "worker_a finished\n";
     };
 };
 
@@ -25,17 +25,29 @@ public:
 
     };
     ~worker_b()=default;
-    void operator()(int j)const{
-        std::cout << "worker_b\n";
+    void operator()()const{
+        std::cout << "worker_b finished\n";
     };
 };
 
-class test{
-    test(){
-
-    };
+class worker_c {
 public:
-    void operator()(int j)const{
+  worker_c(){
+
+  };
+  ~worker_c()=default;
+  void operator()()const{
+    std::cout << "worker_c finished\n";
+  };
+};
+
+class test{
+
+public:
+  test(){
+
+  };
+    void operator()()const{
         std::cout << "bleh\n";
     };
 
@@ -49,7 +61,7 @@ public:
     std::vector<std::thread> t;
     template<class T>
     void add(T & in){
-        t.emplace_back(std::thread(std::ref(in),0));
+        t.emplace_back(std::thread(std::ref(in)));
         // may want to add max thread count and join, reset
     }
 
@@ -68,8 +80,13 @@ void run(int i){
 int main() {
     std::cout << "Hello, Thread!" << std::endl;
 
-    worker_a a,c;
+    test tobj;
+    std::thread t(std::ref(tobj));
+  t.join();
+
+    worker_a a;
     worker_b b;
+  worker_c c;
     threadPool p;
 
     p.add(a);
