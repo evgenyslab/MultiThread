@@ -2,8 +2,8 @@
 // Created by Evgeny Nuger on 16/01/18.
 //
 
-#ifndef FRAMEWORKS_WORKMANAGER_H
-#define FRAMEWORKS_WORKMANAGER_H
+#ifndef MULTITHREAD_WORKMANAGER_H
+#define MULTITHREAD_WORKMANAGER_H
 
 
 namespace workManager{
@@ -26,4 +26,4 @@ namespace workManager{
 
 }
 
-#endif //FRAMEWORKS_WORKMANAGER_H
+#endif //MULTITHREAD_WORKMANAGER_H

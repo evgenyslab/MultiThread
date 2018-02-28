@@ -3,8 +3,8 @@
 //
 
 #pragma once
-#ifndef FRAMEWORKS_QUEUE_H
-#define FRAMEWORKS_QUEUE_H
+#ifndef MULTITHREAD_QUEUE_H
+#define MULTITHREAD_QUEUE_H
 
 #include <vector>
 #include <iostream>
@@ -149,4 +149,4 @@ namespace queue{
 
 }
 
-#endif //FRAMEWORKS_QUEUE_H
+#endif //MULTITHREAD_QUEUE_H

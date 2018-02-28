@@ -4,8 +4,8 @@
 
 #pragma once
 
-#ifndef FRAMEWORKS_WORKER_H
-#define FRAMEWORKS_WORKER_H
+#ifndef MULTITHREAD_WORKER_H
+#define MULTITHREAD_WORKER_H
 
 #include <vector>
 #include <iostream>
@@ -98,4 +98,4 @@ namespace worker{
 }
 
 
-#endif //FRAMEWORKS_WORKER_H
+#endif //MULTITHREAD_WORKER_H
